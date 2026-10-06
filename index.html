@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Найди пару</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ВХОД -->
+    <div class="login-screen" id="loginScreen">
+
+        <div class="login-box">
+
+            <div class="logo">🃏</div>
+
+            <h1>Найди пару</h1>
+
+            <p>Введи своё имя и участвуй в соревновании</p>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Твоё имя"
+                maxlength="20"
+            >
+
+            <button id="loginButton">
+                Войти в игру
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ИГРА -->
+    <main class="game" id="game">
+
+        <header class="header">
+
+            <h1>Найди пару</h1>
+
+            <p>
+                Игрок: <strong id="player"></strong>
+            </p>
+
+        </header>
+
+
+        <section class="stats">
+
+            <div class="stat">
+                <span class="stat-title">ХОДЫ</span>
+                <span id="moves">0</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-title">ВРЕМЯ</span>
+                <span>
+                    <span id="timer">0</span> сек.
+                </span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-title">РЕКОРД</span>
+                <span id="best">—</span>
+            </div>
+
+        </section>
+
+
+        <!-- КАРТОЧКИ -->
+        <section class="board" id="board"></section>
+
+
+        <div class="game-buttons">
+
+            <button class="restart" id="restart">
+                🔄 Новая игра
+            </button>
+
+            <button class="restart" id="showRating">
+                🏆 Рейтинг
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ПОБЕДА -->
+    <div class="win-screen" id="winScreen">
+
+        <div class="win-window">
+
+            <div class="trophy">🏆</div>
+
+            <h2>Победа!</h2>
+
+            <p>
+                Отличная игра, <strong id="winnerName"></strong>!
+            </p>
+
+            <div class="result">
+
+                <div>
+                    <span>Ходы</span>
+                    <strong id="finalMoves">0</strong>
+                </div>
+
+                <div>
+                    <span>Время</span>
+                    <strong id="finalTime">0 сек.</strong>
+                </div>
+
+            </div>
+
+            <button class="restart" id="playAgain">
+                Играть ещё
+            </button>
+
+            <button class="restart" id="winRating">
+                🏆 Посмотреть рейтинг
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- РЕЙТИНГ -->
+    <div class="rating-screen" id="ratingScreen">
+
+        <div class="rating-box">
+
+            <button class="close-rating" id="closeRating">
+                ×
+            </button>
+
+            <h2>🏆 Рейтинг игроков</h2>
+
+            <p class="rating-description">
+                Лучшие результаты
+            </p>
+
+            <div id="ratingList"></div>
+
+            <button class="restart" id="newPlayer">
+                👤 Новый игрок
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- НАША ИГРА -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
